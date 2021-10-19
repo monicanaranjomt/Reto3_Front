@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title></title>
+<style>
+table, th, td {
+  border: 1px solid rgb(115, 114, 122);
+  border-collapse: collapse;
+}
+</style>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/misFunciones.js"></script>  
+    <title>Ajax Reto3</title>
+
+</head>
+    <center><h1>¡Bienvenid@ al proyecto reserva en hoteles!</h1></center>
+<body>
+
+    <h1> Categorias</h1>
+    <div id="resultado1"></div>
+    <button onclick="traerInformacionCategorias()" > Consultar Categorias</button>
+    
+    <div>
+        <br>
+        <input type="text" id="Cname" placeholder="name">
+        <input type="text" id="Cdescription" placeholder="description">
+    </div>
+    <br>
+    <button onclick="guardarInformacionCategorias()">Agregar Categorias</button>
+
+
+    <h1> Habitaciones</h1>
+    <div id="resultado2"></div>
+    <button onclick="traerInformacionRooms()" > Consultar Habitaciones</button>
+    
+    <div>
+        <br>
+        <input type="text" id="Rname" placeholder="name">
+        <input type="text" id="Rhotel" placeholder="hotel">
+        <input type="number" id="Rstars" placeholder="stars">
+        <input type="text" id="Rdescription" placeholder="description">    
+    </div>
+    <br>
+    <button onclick="guardarInformacionRooms()">Agregar Habitaciones</button>
+    <hr size="2px " color="gris " />
+
+    <h1> Clientes</h1>
+    <div id="resultado3"></div>
+    <br>
+    <button onclick="traerInformacionClientes()" > Consultar Clientes</button>
+    
+    <div>
+        <br>
+        <input type="text" id="CLemail" placeholder="email">
+        <input type="text" id="CLpassword" placeholder="password">
+        <input type="text" id="CLname" placeholder="name">
+        <input type="number" id="CLage" placeholder="age">  
+    </div>
+    <br>
+    <button onclick="guardarInformacionClientes()">Agregar Clientes</button>
+    <hr size="2px " color="gris " />
+
+    <h1> Mensajes</h1>
+    <div id="resultado4"></div>
+    <br>
+    <button onclick="traerInformacionMensajes()" > Consultar Mensajes</button>
+    
+    <div>
+        <br>
+        <input type="text" id="MmessageText" placeholder="messageText">
+  
+    </div>
+    <br>
+    <button onclick="guardarInformacionMensajes()">Agregar Mensajes</button>
+    <hr size="2px " color="gris " />
+
+    
+    <h1> Reservas</h1>
+    <div id="resultado5"></div>
+    <br>
+    <button onclick="traerInformacionReservas()" > Consultar Reservas</button>
+    
+    <div>
+        <br>
+        <input type="date" id="RstartDate" placeholder="startDate">
+        <input type="date" id="RdevolutionDate" placeholder="devolutionDate">
+          
+    </div>
+    <br>
+    <button onclick="guardarInformacionReservas()">Agregar Reservas</button>
+    <hr size="2px " color="gris " />
+</body>
+</html>
