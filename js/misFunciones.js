@@ -1,6 +1,6 @@
 function traerInformacionCategorias(){
     $.ajax({
-        url:"http://129.151.111.246:8080/api/Category/all",
+        url:"http://localhost:8080/api/Category/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -17,6 +17,8 @@ function pintarRespuesta(respuesta){
         myTable+="<tr>";
         myTable+="<td>"+respuesta[i].name+"</td>";
         myTable+="<td>"+respuesta[i].description+"</td>";
+        myTable+="<td> <button onclick='borrarCategoria("+respuesta[i].id+")'>Borrar</button>";
+        myTable+="<td> <button onclick=' actualizarInformacionCategorias("+respuesta[i].id+")'>Actualizar</button>";
         myTable+="</tr>";
     }
     myTable+="</table>";
@@ -35,7 +37,7 @@ function guardarInformacionCategorias(){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://129.151.111.246:8080/api/Category/save",
+        url:"http://localhost:8080/api/Category/save",
        
         
         success:function(response) {
@@ -56,22 +58,67 @@ function guardarInformacionCategorias(){
 
 }
 
+function actualizarInformacionCategorias(idElemento){
+    let myData={
+        id:idElemento,
+        name:$("#Cname").val(),
+        description:$("#Cdescription").val()
 
-
-///////////////////Rooms//////////////////////////////////////
-function traerInformacionRooms(){
+    };
+    console.log(myData);
+    let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://129.151.111.246:8080/api/Room/all",
+        url:"http://localhost:8080/api/Category/update",
+        type:"PUT",
+        data:dataToSend,
+        contentType:"application/JSON",
+        datatype:"JSON",
+        success:function(respuesta){
+            $("#resultado").empty();
+            $("#id").val("");
+            $("#Cname").val("");
+            $("#Cdescription").val("");
+            traerInformacionCategorias();
+            alert("se ha Actualizado correctamente la categoria")
+        }
+    });
+
+}
+
+function borrarCategoria(idElemento){
+    let myData={
+        id:idElemento
+    };
+    let dataToSend=JSON.stringify(myData);
+    $.ajax({
+        url:"http://localhost:8080/api/Category/"+idElemento,
+        type:"DELETE",
+        data:dataToSend,
+        contentType:"application/JSON",
+        datatype:"JSON",
+        success:function(respuesta){
+            $("#resultado").empty();
+            traerInformacionCategorias();
+            alert("Se ha Eliminado.")
+        }
+    });
+
+}
+
+///////////////////Habitaciones//////////////////////////////////////
+function traerInformacionHabitaciones(){
+    $.ajax({
+        url:"http://localhost:8080/api/Room/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
             console.log(respuesta);
-            pintarRespuestaRooms(respuesta);
+            pintarRespuestaHabitaciones(respuesta);
         }
     });
 }
 
-function pintarRespuestaRooms(respuesta){
+function pintarRespuestaHabitaciones(respuesta){
 
     let myTable="<table>";
     for(i=0;i<respuesta.length;i++){
@@ -80,18 +127,20 @@ function pintarRespuestaRooms(respuesta){
         myTable+="<td>"+respuesta[i].hotel+"</td>";
         myTable+="<td>"+respuesta[i].stars+"</td>";
         myTable+="<td>"+respuesta[i].description+"</td>";
+        myTable+="<td> <button onclick='borrarHabitacion("+respuesta[i].id+")'>Borrar</button>";
+        myTable+="<td> <button onclick=' actualizarInformacionHabitaciones("+respuesta[i].id+")'>Actualizar</button>";
         myTable+="</tr>";
     }
     myTable+="</table>";
     $("#resultado2").html(myTable);
 }
 
-function guardarInformacionRooms(){
+function guardarInformacionHabitaciones(){
     let var3 = {
         name:$("#Rname").val(),
         hotel:$("#Rhotel").val(),
         stars:$("#Rstars").val(),
-        description:$("Rrdescription").val(),
+        description:$("Rdescription").val(),
         };
       
         $.ajax({
@@ -100,7 +149,7 @@ function guardarInformacionRooms(){
         dataType: 'JSON',
         data: JSON.stringify(var3),
         
-        url:"http://129.151.111.246:8080/api/Room/save",
+        url:"http://localhost:8080/api/Room/save",
        
         
         success:function(response) {
@@ -118,6 +167,57 @@ function guardarInformacionRooms(){
     
         }
         });
+
+}
+
+function actualizarInformacionHabitaciones(idElemento){
+    let myData={
+        id:idElemento,
+        name:$("#Rname").val(),
+        hotel:$("#Rhotel").val(),
+        stars:$("#Rstars").val(),
+        description:$("Rrdescription").val(),
+
+    };
+    console.log(myData);
+    let dataToSend=JSON.stringify(myData);
+    $.ajax({
+        url:"http://localhost:8080/api/Category/update",
+        type:"PUT",
+        data:dataToSend,
+        contentType:"application/JSON",
+        datatype:"JSON",
+        success:function(respuesta){
+            $("#resultado2").empty();
+            $("#id").val("");
+            $("#Rname").val("");
+            $("#Rhotel").val("");
+            $("#Rstars").val("");
+            $("#Rdescription").val("");
+            traerInformacionHabitaciones();
+            alert("se ha Actualizado correctamente la habitación")
+        }
+    });
+
+}
+
+function borrarHabitacion(idElemento){
+    let myData={
+        id:idElemento
+    };
+    let dataToSend=JSON.stringify(myData);
+    $.ajax({
+        url:"http://localhost:8080/api/Category/"+idElemento,
+        type:"DELETE",
+        data:dataToSend,
+        contentType:"application/JSON",
+        datatype:"JSON",
+        success:function(respuesta){
+            $("#resultado2").empty();
+            traerInformacionHabitaciones();
+            alert("Se ha Eliminado la habitacion.")
+        }
+    });
 
 }
 //////////////////////Clientes//////////////////////////////////
