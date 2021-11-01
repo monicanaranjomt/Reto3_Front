@@ -1,111 +1,35 @@
 <!DOCTYPE html>
-<html >
+<html lang="es">
 <head>
-    <title></title>
-<style>
-table, th, td {
-  border: 1px solid rgb(115, 114, 122);
-  border-collapse: collapse;
-  background-color: rgb(205, 243, 214);
-}
-</style>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/misFunciones.js"></script>  
-    <title>Ajax Reto3</title>
-
-
+<title> Reserva de Hoteles</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<link rel="stylesheet" href="Estilo.css">
 </head>
-    <center><h1><B><FONT COLOR="white">¡Reserva de Hoteles!</FONT></h1></center>
+<center><h1><FONT SISE="60" COLOR="white" FACE="Verdana">¡Reserva de Hoteles!</FONT></h1></center> 
 <body background="Hotel3Ed.jpg">
-
-<!--Tabla Categorias-->
-    <h1> Categorias</h1>
-    <div id="resultado1"></div>
-    <script type="text/javascript"> 
-        window.onload = autoInicioCategoria();
-    </script>
+    <header id="cabeceralogo">
     <div>
-        <br>
-        <input type="text" id="Cname" placeholder="name" maxlength="45"/>
-        <input type="text" id="Cdescription" placeholder="description" maxlength="250"/>
+    <h1>Principal </h1>
     </div>
-    <br>
-    <button style= "background-color:rgb(226, 189, 192)"; onclick="guardarInformacionCategorias()">Agregar</button>
-
-<!--Tabla Habitaciones-->
-
-    <h1> Habitaciones</h1>
-    <div id="resultado2"></div>
-    <script type="text/javascript"> 
-    window.onload = autoInicioHabitacion();
-    </script>
+    </header>
+    <nav id="menuprincipal">
     <div>
-        <br>
-        <input type="text" id="Rname" placeholder="name" maxlength="45"/>
-        <input type="text" id="Rhotel" placeholder="hotel" maxlength="45"/>
-        <input type="number" id="Rstars" placeholder="stars" maxlength="1"/>
-        <input type="text" id="Rdescription" placeholder="description" maxlength="250"/>   
-        <select id="select-category"></select> 
+    <ul>
+    <li><a href="index.html">Principal</a></li>
+    <li><a href="1Categorías.html">Categorias</a></li>
+    <li><a href="2Room.html">Habitaciones</a></li>
+    <li><a href="3Clientes.html">Clientes</a></li>
+    <li><a href="4Mensajes.html">Mensajes</a></li>
+    <li><a href="5Reservaciones.html">Reservaciones</a></li>
+    <li><a href="6Reportes.html">Reportes</a></li>
+    </ul>
     </div>
-    <br>
-    <button onclick="guardarInformacionHabitaciones()">Agregar</button>
-    
-<!--Tabla Clientes-->
+    </nav>
 
-    <h1> Clientes</h1>
-    <div id="resultado3"></div>
-    <script type="text/javascript"> 
-    window.onload = autoInicioCliente();
-    </script>
-    <div>
-        <br>
-        <input type="text" id="CLemail" placeholder="email">
-        <input type="text" id="CLpassword" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="45"/>
-        <input type="text" id="CLname" placeholder="name" maxlength="250"/>
-        <input type="number" id="CLage" placeholder="age"> 
-        
-    </div>
-    <br>
-    <button onclick="guardarInformacionClientes()">Agregar</button>
-    
-<!--Tabla Mensajes-->
-
-    <h1> Mensajes</h1>
-    <div id="resultado4"></div>
-    <script type="text/javascript"> 
-    window.onload = autoInicioMensaje();
-    </script>
-    <div>
-        <br>
-        <input type="text" id="MmessageText" placeholder="messageText" maxlength="250"/>
-        <select id="select-client"></select> 
-  
-    </div>
-    <br>
-    <button onclick="guardarInformacionMensajes()">Agregar</button>
-    
-<!--Tabla Reservas-->
-    
-    <h1> Reservas</h1>
-    <div id="resultado5"></div>
-    <script type="text/javascript"> 
-    window.onload = autoInicioReservas();
-    </script>
-    <div>
-        <br>
-        <input type="date" id="RstartDate" placeholder="startDate">
-        <input type="date" id="RdevolutionDate" placeholder="devolutionDate">
-        <select placeholder="status"> 
-            <option selected value="0"> status</option>
-            <option value="Programado">Programado</option>
-            <option value="Cancelado">Cancelado</option>
-            <option value="Realizado">Realizado</option>
-        </select>
-          
-    </div>
-    <br>
-    <button onclick="guardarInformacionReservas()">Agregar Reservas</button>
-    <hr size="2px " color="white" />
+    <center><h2><font SISE="20" COLOR="green" FACE="Verdana">Bienvenidos a la App reserva de Hoteles</font></h2></center>
+    <h3> <font SISE="9" COLOR="black" FACE="Arial"> Dando clic en cada una de las pestañas de la parte superior 
+        lo direccionará a la visualización de su contenido</font></h3>
 </body>
 </html>

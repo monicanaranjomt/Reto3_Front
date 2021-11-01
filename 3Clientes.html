@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title> Reserva de Hoteles</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="Estilo.css">
+<script type="text/javascript" src="js/FuncionesClientes.js"></script>  
+</head>
+
+<center><h1><FONT SISE="60" COLOR="white" FACE="Verdana">¡Reserva de Hoteles!</FONT></h1></center> 
+<body background="Hotel3Ed.jpg">
+    <header id="cabeceralogo">
+    <div>
+    <h1> Clientes </h1>
+    </div>
+    </header>
+    <nav id="menuprincipal">
+    <div>
+    <ul>
+    <li><a href="index.html">Principal</a></li>
+    <li><a href="1Categorías.html">Categorias</a></li>
+    <li><a href="2Room.html">Habitaciones</a></li>
+    <li><a href="3Clientes.html">Clientes</a></li>
+    <li><a href="4Mensajes.html">Mensajes</a></li>
+    <li><a href="5Reservaciones.html">Reservaciones</a></li>
+    <li><a href="6Reportes.html">Reportes</a></li>
+    </ul>
+    </div>
+    </nav>
+    <br>
+    <div id="resultado3"></div>
+    <script type="text/javascript"> 
+        window.onload = autoInicioCliente();
+    </script>
+    <div>
+        <br>
+        <input type="text" id="CLemail" email="email" placeholder="email" maxlength="45">
+        <input type="text" id="CLpassword" password="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="45"/>
+        <input type="text" id="CLname" name="name" placeholder="name" maxlength="250">
+        <input type="number" id="CLage" age="age" placeholder="age" > 
+        
+    </div>
+    <br>
+    <button style= "background-color:rgb(29, 116, 122);border-color:rgb(104, 197, 204);color:white"; onclick="guardarInformacionClientes()">Agregar</button>
+<!--Estilo de la Tabla-->
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid rgb(15, 108, 121);
+        border-collapse: collapse;
+    }
+</style>
+</body>
+</html>

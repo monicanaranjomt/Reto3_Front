@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title> Reserva de Hoteles</title>
+<meta charset="utf-8">
+<meta name="description" content="Este es un documento HTML5">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="Estilo.css">
+<script type="text/javascript" src="js/FuncionesMensajes.js"></script>  
+</head>
+
+<center><h1><FONT SISE="60" COLOR="white" FACE="Verdana">¡Reserva de Hoteles!</FONT></h1></center> 
+<body background="Hotel3Ed.jpg">
+    <header id="cabeceralogo">
+    <div>
+    <h1>Mensajes </h1>
+    </div>
+    </header>
+    <nav id="menuprincipal">
+    <div>
+    <ul>
+    <li><a href="index.html">Principal</a></li>
+    <li><a href="1Categorías.html">Reportes</a></li>
+    <li><a href="2Room.html">Categorias</a></li>
+    <li><a href="3Clientes.html">Clientes</a></li>
+    <li><a href="4Mensajes.html">Mensajes</a></li>
+    <li><a href="5Reservaciones.html">Reservaciones</a></li>
+    <li><a href="6Reportes.html">Skates</a></li>
+    </ul>
+    </div>
+    </nav>
+    <br>
+    <div id="resultado4"></div>
+    <script type="text/javascript"> 
+    window.onload = autoInicioMensaje();
+    </script>
+    
+    <br>
+    <input type="text" id="messageText" messageText="messageText" placeholder="messageText" maxlength="250"/>
+    <select id="select-client"></select>
+    <script type="text/javascript">
+    window.onload = autoInicioRelacionCliente();
+    </script>
+    <select id="select-room"></select><br>
+    <script type="text/javascript">
+    window.onload = autoInicioRelacionRoom();
+    </script>   
+    <br>
+    <button style= "background-color:rgb(29, 116, 122);border-color:rgb(104, 197, 204);color:white"; onclick="guardarInformacionMensajes()">Agregar Mensaje</button>
+<!--Estilo de la Tabla-->
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid rgb(15, 108, 121);
+        border-collapse: collapse;
+    }
+</style>
+</body>
+</html>
