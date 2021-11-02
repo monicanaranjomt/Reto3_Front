@@ -30,6 +30,9 @@ function pintarRespuestaClientes(respuesta){
 }
 
 function guardarInformacionClientes(){
+    if($("#CLemail").val().length == 0 || $("#CLpassword").val().length == 0 || $("#CLname").val().length == 0 || $("#CLage").val().length == 0){
+        alert("Los campos son Obligatorios")
+    }else{ 
     let var4 = {
         email:$("#CLemail").val(),
         password:$("#CLpassword").val(),
@@ -63,10 +66,13 @@ function guardarInformacionClientes(){
     
         }
         });
-
+    }
 }
 
 function actualizarInformacionClientes(idElemento){
+    if($("#CLemail").val().length == 0 || $("#CLpassword").val().length == 0 || $("#CLname").val().length == 0 || $("#CLage").val().length == 0){
+        alert("Los campos son Obligatorios")
+    }else{ 
     let myData={
         idClient:idElemento,
         email:$("#CLemail").val(),
@@ -94,7 +100,7 @@ function actualizarInformacionClientes(idElemento){
             alert("Cliente actualizado correctamente")
         }
     });
-
+    }
 }
 
 function borrarCliente(idElemento){

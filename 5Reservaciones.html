@@ -35,13 +35,14 @@
     <input class="controlReservation" type="date" id="startDate" placeholder="startDate"><br>
     <label>DEVOLUTIONDATE: Escoja la Fecha Devolucion de la Reservacion</label>
     <input class="controlReservation" type="date" id="devolutionDate" placeholder="devolutionDate"><br>
-    <label>STATUS: Estado de la Reservacion "completed / cancelled</label>
-    <input class="controlReservation" type="text" id="status" placeholder="escriba completed o cancelled para el estado de la Reservacion ">
-    
+    <label>STATUS: Estado de la Reservacion </label>
+    <input class="controlReservation" type="text" id="status" placeholder="escriba completed o cancelled ">
+    <label>Seleccione un cliente:</label>
     <select id="select-client"></select>
         <script type="text/javascript">
             window.onload = autoInicioRelacionCliente();
         </script>
+        <label>Seleccione una habitación:</label>
             <select id="select-room"></select>
             <script type="text/javascript">
                 window.onload = autoInicioRoom();
